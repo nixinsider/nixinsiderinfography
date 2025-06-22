@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Consequences of a U.S. Strike on Iran</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!--
+    Palette Name: Brilliant Blues (#0A2463, #3E92CC, #D8315B, #1E1B18, #FFFFFF)
+    Infographic Plan:
+    1. Header: Title and hook.
+    2. The Strike & Its Paradox: Key military facts and the strategic dilemma of proliferation.
+    3. Iran's Retaliation Matrix: Visualizing the probability of different response scenarios.
+    4. Global Market Shockwaves: Charting the impact on oil, safe havens, and equities with live data.
+    5. The Real Catastrophe: Debunking the WW3 myth and illustrating the economic fallout risk via a flowchart.
+    6. Strategic Takeaways & Human Cost: Concluding with market advice and a humanistic perspective.
+    Final Check: Confirmed NO Mermaid JS and NO SVG used. All diagrams are HTML/CSS. All charts are Chart.js on Canvas.
+
+    Visualization Selection Plan:
+    1. Proliferation Paradox: Goal=Organize, Viz=HTML/CSS Diagram. Justification=Best for cause-and-effect logic. Method=HTML/CSS. Confirmed NO SVG.
+    2. Retaliation Probability: Goal=Compare, Viz=Chart.js Horizontal Bar. Justification=Clear comparison of probabilities. Method=Chart.js. Confirmed NO SVG.
+    3. Oil Price Scenarios: Goal=Change/Compare, Viz=Chart.js Line Chart. Justification=Shows potential price paths effectively. Method=Chart.js. Confirmed NO SVG.
+    4. Gold & Bitcoin Prices: Goal=Change, Viz=Chart.js Line Charts with Live API Data. Justification=Shows pre/post-strike price action clearly with real-time updates. Method=Chart.js + Fetch API. Confirmed NO SVG.
+    5. Recession Flowchart: Goal=Organize, Viz=HTML/CSS Flowchart. Justification=Ideal for sequential process. Method=HTML/CSS. Confirmed NO SVG/Mermaid.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .kpi-value {
+            font-weight: 900;
+            font-size: 4rem;
+            line-height: 1;
+            color: #D8315B;
+        }
+        .kpi-label {
+            font-weight: 600;
+            color: #0A2463;
+        }
+        .flowchart-node {
+            border: 2px solid #0A2463;
+            background-color: #ffffff;
+            color: #0A2463;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-arrow {
+            color: #0A2463;
+            font-size: 2.5rem;
+            line-height: 1;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body class="text-[#1E1B18]">
+
+    <header class="bg-[#0A2463] text-white p-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-black mb-2">ANATOMY OF A CRISIS</h1>
+        <p class="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto">A strategic analysis of the geopolitical and market consequences following a direct U.S. military strike on Iranian nuclear facilities.</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <section class="md:col-span-2 lg:col-span-4 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-[#0A2463] mb-4 text-center">The Strike & Its Paradox</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-gray-600">
+                    A direct U.S. military intervention targeted Iran's core nuclear sites at Natanz, Fordo, and Isfahan. While declared a tactical success, the strikes create a strategic paradox: destroying known facilities may incentivize Iran to rebuild its program covertly, accelerating the very threat the operation was meant to prevent.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="text-center p-6 bg-slate-50 rounded-lg">
+                        <div class="kpi-value">12</div>
+                        <div class="kpi-label text-2xl">GBU-57 MOPs</div>
+                        <p class="text-gray-600 mt-2">30,000-pound "bunker busters" used to penetrate the hardened Fordo facility, demonstrating overwhelming U.S. force.</p>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl text-center text-[#0A2463] mb-4">The Osirak Precedent: A Cautionary Tale</h3>
+                        <div class="flex items-center justify-center space-x-4">
+                            <div class="text-center">
+                                <div class="font-bold text-lg">1981 Strike on Iraq</div>
+                                <p class="text-sm text-gray-500">Tactical Success</p>
+                            </div>
+                            <div class="text-4xl font-black text-[#D8315B]">&rarr;</div>
+                             <div class="text-center">
+                                <div class="font-bold text-lg">Covert Nuclear Program</div>
+                                <p class="text-sm text-gray-500">Strategic Failure</p>
+                            </div>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">Analysts fear history repeating itself, where the attack on Iran, like the one on Iraq's Osirak reactor, triggers a more determined and clandestine nuclear weapons program.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-[#0A2463] mb-2 text-center">Iran's Retaliation Matrix</h2>
+                <p class="text-center max-w-3xl mx-auto mb-6 text-gray-600">
+                    Tehran's response is a calculated balance between projecting strength and ensuring regime survival. The most likely actions are asymmetric, avoiding a direct conventional war with the U.S. that it cannot win.
+                </p>
+                <div class="chart-container">
+                    <canvas id="retaliationChart"></canvas>
+                </div>
+            </section>
+            
+            <aside class="lg:col-span-1 bg-white rounded-lg shadow-md p-6 flex flex-col justify-center">
+                <h3 class="text-2xl font-bold text-[#0A2463] mb-4 text-center">Weakened "Axis of Resistance"</h3>
+                <p class="text-gray-600 text-center mb-4">
+                    Iran's ability to project power via its regional proxy network is severely degraded.
+                </p>
+                <ul class="space-y-3 text-center">
+                    <li class="p-3 bg-red-100 text-red-800 rounded-md font-semibold">
+                        <span class="font-black">Hezbollah:</span> "Mauled" in prior conflicts, leadership decimated.
+                    </li>
+                    <li class="p-3 bg-red-100 text-red-800 rounded-md font-semibold">
+                        <span class="font-black">Hamas:</span> Military capacity severely diminished.
+                    </li>
+                     <li class="p-3 bg-yellow-100 text-yellow-800 rounded-md font-semibold">
+                        <span class="font-black">Remaining Actors:</span> Houthis and Iraqi militias can cause instability but lack strategic impact.
+                    </li>
+                </ul>
+            </aside>
+
+            <section class="md:col-span-2 lg:col-span-4 bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-3xl font-bold text-[#0A2463] mb-2 text-center">Global Market Shockwaves</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-gray-600">
+                    The strikes triggered immediate volatility across global markets, driven by fears of a major energy supply disruption and a flight to safety. The central fear is the closure of the Strait of Hormuz, a chokepoint for 20% of the world's oil.
+                </p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-center text-[#0A2463] mb-4">Oil Price Forecasts (Brent Crude)</h3>
+                        <div class="chart-container h-[300px] md:h-[350px]">
+                            <canvas id="oilPriceChart"></canvas>
+                        </div>
+                    </div>
+                     <div class="p-6 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+                           <h4 class="font-bold text-xl text-yellow-800 mb-2">Gold: The Ultimate Safe Haven</h4>
+                           <div class="chart-container h-[200px] mb-4">
+                               <canvas id="goldPriceChart"></canvas>
+                           </div>
+                           <p class="text-yellow-700">In a classic flight to safety, capital pours into gold, driven by investor panic and central bank buying as nations diversify away from the U.S. Dollar.</p>
+                        </div>
+                    <div class="p-6 bg-gray-50 rounded-lg border-l-4 border-gray-400">
+                        <h4 class="font-bold text-xl text-gray-800 mb-2">Bitcoin's Paradox: Risk vs. Refuge</h4>
+                        <div class="chart-container h-[200px] mb-4">
+                            <canvas id="bitcoinPriceChart"></canvas>
+                        </div>
+                        <p class="text-gray-700">The crisis reveals Bitcoin's dual identity. It sells off like a tech stock in the initial panic, yet the event strengthens its long-term case as a non-sovereign hedge against geopolitical chaos.</p>
+                    </div>
+
+                    <div class="lg:col-span-2">
+                        <h3 class="text-xl font-bold text-center text-[#0A2463] mb-4">The Real Catastrophe: Economic Fallout</h3>
+                        <p class="text-center text-gray-600 mb-6">The "World War 3" scenario is a misnomer. The true global risk is not a military clash of superpowers, but an economic one triggered by a regional war that closes the Strait of Hormuz.</p>
+                        <div class="w-full overflow-x-auto p-4">
+                            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                                <div class="flowchart-node">Hormuz Closure</div>
+                                <div class="flowchart-arrow transform md:-translate-y-1 md:rotate-0 rotate-90">&darr;</div>
+                                <div class="flowchart-node">Massive Oil Price Shock</div>
+                                <div class="flowchart-arrow transform md:-translate-y-1 md:rotate-0 rotate-90">&darr;</div>
+                                <div class="flowchart-node">Global Hyperinflation</div>
+                                <div class="flowchart-arrow transform md:-translate-y-1 md:rotate-0 rotate-90">&darr;</div>
+                                <div class="flowchart-node bg-[#D8315B] text-white border-[#D8315B]">Severe Global Recession</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="md:col-span-2 lg:col-span-4 bg-white rounded-lg shadow-md p-6">
+                 <h2 class="text-3xl font-bold text-[#0A2463] mb-4 text-center">Strategic Outlook</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-center text-gray-800 mb-4">Navigating Market Volatility</h3>
+                        <ul class="space-y-3 list-disc list-inside text-gray-700">
+                           <li><span class="font-semibold">Diversify & Hedge:</span> Increase allocation to safe havens like gold and the U.S. dollar. Use options to hedge against equity downturns.</li>
+                           <li><span class="font-semibold">Identify Sector Shifts:</span> Overweight resilient sectors like energy and defense while reducing exposure to vulnerable ones like airlines and travel.</li>
+                           <li><span class="font-semibold">Monitor Triggers:</span> Watch for red lines like attacks on U.S. troops or a tangible move to close the Strait of Hormuz to guide defensive posturing.</li>
+                            <li><span class="font-semibold">Look Long-Term:</span> Distinguish short-term panic from long-term trends. Dips in assets with strong fundamentals, like Bitcoin, may be strategic buying opportunities.</li>
+                        </ul>
+                    </div>
+                    <div class="border-t-2 md:border-t-0 md:border-l-2 border-dashed border-gray-300 pl-0 md:pl-8 pt-6 md:pt-0">
+                         <h3 class="text-xl font-bold text-center text-gray-800 mb-4">A Concluding Perspective on Conflict</h3>
+                         <p class="text-gray-700">Beyond the cold calculus of geopolitics and markets, it is imperative to remember the profound human cost of war. Every missile strike results in the loss of life, shatters communities, and leaves a legacy of trauma.</p>
+                         <p class="mt-4 text-center font-semibold text-[#D8315B]">While this analysis provides a framework for understanding the crisis, it must conclude with an unambiguous affirmation: war is not a viable or sustainable solution for humanity. The ultimate goal must be the relentless pursuit of peace and diplomacy.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    
+    <footer class="text-center p-6 mt-8 text-gray-500 text-sm">
+        <p>This infographic is a visual representation of a strategic analysis. Data is derived from open-source reporting and expert analysis models. All figures are illustrative. Live price data courtesy of CoinGecko.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const brandColors = {
+                darkBlue: '#0A2463',
+                lightBlue: '#3E92CC',
+                red: '#D8315B',
+                dark: '#1E1B18',
+                white: '#FFFFFF',
+                gold: '#FFD700',
+                bitcoin: '#F7931A'
+            };
+            
+            let goldChartInstance;
+            let bitcoinChartInstance;
+
+            const wrapLabel = (label, maxWidth) => {
+                const words = label.split(' ');
+                let lines = [];
+                let currentLine = words[0];
+
+                for (let i = 1; i < words.length; i++) {
+                    if (currentLine.length + words[i].length + 1 < maxWidth) {
+                        currentLine += ' ' + words[i];
+                    } else {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            };
+            
+            const universalTooltipCallback = {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                      return label.join(' ');
+                    } else {
+                      return label;
+                    }
+                }
+            };
+
+            const createRetaliationChart = () => {
+                const ctx = document.getElementById('retaliationChart').getContext('2d');
+                const rawLabels = [
+                    'Sustained Closure of Strait of Hormuz',
+                    'Targeting U.S. Military Assets', 
+                    'Targeting Allied Energy Infrastructure', 
+                    'Transnational Terrorism & Sleeper Cells',
+                    'Large-Scale Cyber Warfare',
+                    'Continued Missile/Drone Strikes on Israel'
+                ];
+
+                const labels = rawLabels.map(label => label.length > 25 ? wrapLabel(label, 25) : label);
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Probability of Scenario',
+                            data: [10, 40, 55, 70, 85, 95], 
+                            backgroundColor: [ brandColors.red, brandColors.lightBlue, brandColors.lightBlue, brandColors.darkBlue, brandColors.darkBlue, brandColors.darkBlue ],
+                            borderColor: brandColors.white,
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: { callbacks: universalTooltipCallback },
+                            title: { display: true, text: 'Probability of Iranian Response Scenarios', font: { size: 16, weight: 'bold' }, color: brandColors.darkBlue, padding: { bottom: 20 } }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                max: 100,
+                                ticks: {
+                                    callback: function(value) {
+                                        if (value < 20) return 'Low';
+                                        if (value < 60) return 'Medium';
+                                        if (value < 90) return 'High';
+                                        return 'Very High';
+                                    },
+                                    color: brandColors.dark,
+                                    font: { weight: '600' }
+                                }
+                            },
+                            y: { ticks: { color: brandColors.dark, font: { size: 12 } } }
+                        }
+                    }
+                });
+            };
+
+            const createOilPriceChart = () => {
+                const ctx = document.getElementById('oilPriceChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Pre-Strike', 'Contained Conflict', ['Partial', 'Disruption'], ['Hormuz Closure', '(Tail Risk)']],
+                        datasets: [{
+                            label: 'Brent Crude Price ($/barrel)',
+                            data: [79, 88, 95, 135],
+                            fill: false,
+                            borderColor: brandColors.red,
+                            backgroundColor: brandColors.red,
+                            tension: 0.1,
+                            pointRadius: 5,
+                            pointHoverRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false }, tooltip: { callbacks: universalTooltipCallback } },
+                        scales: {
+                            y: { beginAtZero: false, min: 70, ticks: { callback: function(value) { return '$' + value; }, color: brandColors.dark } },
+                            x: { ticks: { color: brandColors.dark } }
+                        }
+                    }
+                });
+            };
+            
+            const createGoldPriceChart = () => {
+                const ctx = document.getElementById('goldPriceChart').getContext('2d');
+                goldChartInstance = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['T-2 Days', 'T-1 Day', 'Strike', 'T+1 Day', 'Live'],
+                        datasets: [{
+                            label: 'Gold Price (USD/oz)',
+                            data: [2350, 2345, 2380, 2450, null], 
+                            borderColor: brandColors.gold,
+                            backgroundColor: 'rgba(255, 215, 0, 0.1)',
+                            fill: true,
+                            tension: 0.2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: { callbacks: universalTooltipCallback },
+                            title: { display: true, text: 'Fetching Live Gold Price...', font: { size: 14 }, color: brandColors.dark, position: 'top', align: 'start' }
+                        },
+                        scales: {
+                            y: { ticks: { callback: function(value) { return '$' + value; }, color: brandColors.dark } },
+                            x: { ticks: { color: brandColors.dark } }
+                        }
+                    }
+                });
+            };
+
+            const createBitcoinPriceChart = () => {
+                const ctx = document.getElementById('bitcoinPriceChart').getContext('2d');
+                bitcoinChartInstance = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['T-2 Days', 'T-1 Day', 'Strike', 'T+1 Day', 'Live'],
+                        datasets: [{
+                            label: 'Bitcoin Price (USD)',
+                            data: [68500, 68000, 61500, 63000, null], 
+                            borderColor: brandColors.bitcoin,
+                            backgroundColor: 'rgba(247, 147, 26, 0.1)',
+                            fill: true,
+                            tension: 0.2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: { callbacks: universalTooltipCallback },
+                            title: { display: true, text: 'Fetching Live Bitcoin Price...', font: { size: 14 }, color: brandColors.dark, position: 'top', align: 'start' }
+                        },
+                        scales: {
+                            y: { ticks: { callback: function(value) { return '$' + value.toLocaleString(); }, color: brandColors.dark } },
+                            x: { ticks: { color: brandColors.dark } }
+                        }
+                    }
+                });
+            };
+
+            async function updateLivePrices() {
+                try {
+                    const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,pax-gold&vs_currencies=usd');
+                    if (!response.ok) throw new Error('Network response was not ok.');
+                    const data = await response.json();
+                    
+                    const btcPrice = data.bitcoin.usd;
+                    const goldPrice = data['pax-gold'].usd;
+
+                    if (bitcoinChartInstance) {
+                        bitcoinChartInstance.data.datasets[0].data[4] = btcPrice;
+                        bitcoinChartInstance.options.plugins.title.text = `Bitcoin - Live: $${btcPrice.toLocaleString()}`;
+                        bitcoinChartInstance.update('none');
+                    }
+
+                    if (goldChartInstance) {
+                        goldChartInstance.data.datasets[0].data[4] = goldPrice;
+                        goldChartInstance.options.plugins.title.text = `Gold (Proxy) - Live: $${goldPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                        goldChartInstance.update('none');
+                    }
+
+                } catch (error) {
+                    if (bitcoinChartInstance) bitcoinChartInstance.options.plugins.title.text = `Bitcoin - Error fetching price`;
+                    if (goldChartInstance) goldChartInstance.options.plugins.title.text = `Gold (Proxy) - Error fetching price`;
+                    if (bitcoinChartInstance) bitcoinChartInstance.update('none');
+                    if (goldChartInstance) goldChartInstance.update('none');
+                }
+            }
+
+            createRetaliationChart();
+            createOilPriceChart();
+            createGoldPriceChart();
+            createBitcoinPriceChart();
+
+            updateLivePrices();
+            setInterval(updateLivePrices, 30000); 
+
+        });
+    </script>
+</body>
+</html>
